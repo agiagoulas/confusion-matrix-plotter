@@ -1,4 +1,4 @@
-# confusion-matix-plotter
+# confusion-matrix-plotter
 
 ```
 Usage: main.py [OPTIONS] TN FN TP FP
