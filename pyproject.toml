@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "confusion-matix-plotter"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Giagoulas"]
+license = "MIT Licence"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+typer = "^0.3.2"
+matplotlib = "^3.4.1"
+pandas = "^1.2.4"
+seaborn="^0.11.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
