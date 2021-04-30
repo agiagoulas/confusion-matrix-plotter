@@ -3,11 +3,13 @@ import matplotlib.pyplot as plt
 import seaborn as sn
 import pandas as pd
 import numpy as np
+from os import path
 
 
-def main(tn: int, fn: int, tp: int, fp: int, outdir: str="./out", title: str=""):
+def main(tn: int, fn: int, tp: int, fp: int, outdir: str="./out/", title: str="", show: bool=True):
     """
-    Creates a confusion matrix with TP, FP, TN, FN values in the outdir
+    Creates a confusion matrix with TP, FP, TN, FN values in the outdir.
+    Set title for plot title.
     """
     data = pd.DataFrame([[tn, fp],[fn, tp]], range(2), range(2)).to_numpy()
 
@@ -24,7 +26,18 @@ def main(tn: int, fn: int, tp: int, fp: int, outdir: str="./out", title: str="")
     plt.ylabel("True")
     if title != "":
         plt.title(title, loc="right")
-    plt.show()
+    if show:
+        plt.show()
+
+    if title != "" and not path.exists(outdir + f"{title}.png"):
+        filename = f"{title}.png"
+    else:
+        i = 0
+        while path.exists(outdir + "confusionMatrix-%s.png" % i):
+            i += 1
+        filename = "confusionMatrix-%s.png" % i
+
+    plt.savefig(outdir + filename, dpi=400)
 
 
 if __name__ == "__main__":
