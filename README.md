@@ -1,5 +1,7 @@
 # confusion-matrix-plotter
 
+Simple python script to create to confusion matrices for binary classification problems.
+
 ```
 Usage: main.py [OPTIONS] TN FN TP FP
 
@@ -18,3 +20,7 @@ Options:
   --show / --no-show              [default: True]
   --help                          Show this message and exit.
 ```
+
+## Example Matrix
+
+<img src="./image/exampleMatrix.png" alt="drawing" width="600"/>

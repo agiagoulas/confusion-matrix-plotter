@@ -22,7 +22,7 @@ def main(tn: int, fn: int, tp: int, fp: int, outdir: str="./out/", title: str=""
     sn.set(font_scale=1.3)
     sn.heatmap(data, annot=labels, fmt="", cmap="Greys", cbar=False, xticklabels=True, yticklabels=True)
 
-    plt.xlabel("Predicted")
+    plt.xlabel("Prediction")
     plt.ylabel("True")
     if title != "":
         plt.title(title, loc="right")
